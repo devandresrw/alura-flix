@@ -1,0 +1,14 @@
+
+
+1 Crear un seed 
+2 Enviar imagenes a cloudinary 
+3 usar indexed DB. 
+
+
+Estructura base de datos: 
+
+      Categorias: 
+          
+      Peliculas: 
+
+      Imagenes: 
