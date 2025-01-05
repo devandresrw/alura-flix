@@ -33,27 +33,28 @@ export default function Hero() {
           className="flex transition-transform duration-500 ease-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
-          {movies.map((movie, index) => (
-            <div key={index} className="w-full flex-shrink-0">
-              <ItemHero
-                title={movie.title}
-                backdropPath={getFullImagePath(movie.backdropPath)}
-                posterPath={getFullImagePath(movie.posterPath)}
-                overview={movie.overview}
-                genres={movie.genres}
-                releaseDate={movie.releaseDate}
-                voteAverage={movie.voteAverage}
-                voteCount={movie.voteCount}
-                adult={movie.adult}
-                originalLanguage={movie.originalLanguage}
-                originalTitle={movie.originalTitle}
-                popularity={movie.popularity}
-                video={movie.video}
-                id={movie.id}
-                tmdbId={movie.tmdbId}
-              />
-            </div>
-          ))}
+          {
+            movies.map((movie, index) => (
+              <div key={index} className="w-full flex-shrink-0">
+                <ItemHero
+                  title={movie.title}
+                  backdropPath={getFullImagePath(movie.backdropPath)}
+                  posterPath={getFullImagePath(movie.posterPath)}
+                  overview={movie.overview}
+                  genres={movie.genres}
+                  releaseDate={movie.releaseDate}
+                  voteAverage={movie.voteAverage}
+                  voteCount={movie.voteCount}
+                  adult={movie.adult}
+                  originalLanguage={movie.originalLanguage}
+                  originalTitle={movie.originalTitle}
+                  popularity={movie.popularity}
+                  video={movie.video}
+                  id={movie.id}
+                  tmdbId={movie.tmdbId}
+                />
+              </div>
+            ))}
         </div>
       </div>
 
