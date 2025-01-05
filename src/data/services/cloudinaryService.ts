@@ -1,7 +1,7 @@
-import cloudinary from "@/config/cloudinary"
+import cloudinary from "../../config/cloudinary";
 
 
-export class CloudinaryService {
+export default class CloudinaryService {
   private folder = 'movie-app'
 
   async uploadImage(imageUrl: string): Promise<string> {
