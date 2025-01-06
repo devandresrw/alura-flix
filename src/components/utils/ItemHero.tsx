@@ -1,5 +1,6 @@
-import { ImageBackground } from "@/components/hero/BackgroundImage"
+import { SideLeft, SideRight, ImageBackground } from "@/components"
 import { Movie } from '@/lib/types'
+
 /**
 Recibe una imagen de fondo
 Recibe un titulo
@@ -15,14 +16,49 @@ Recibe una imagen de poster
 
 
 
-export default function ItemHero({ ...props }: Movie) {
+export default function ItemHero({
+  backdropPath,
+  originalTitle,
+  adult,
+  originalLanguage,
+  overview,
+  popularity,
+  releaseDate,
+  genres,
+  voteAverage,
+  voteCount,
+  posterPath,
+  id,
+
+}: Movie) {
 
   return (
     <div className="w-full h-[90vh]">
       <ImageBackground
-        src={props.backdropPath}
+        src={backdropPath}
       >
-        <h1>{props.title}</h1>
+        <div className="w-full h-full flex items-center">
+          <div className="">
+            <SideLeft
+              title={originalTitle}
+              adult={adult}
+              originalLanguage={originalLanguage}
+              overview={overview}
+              popularity={popularity}
+              realeseDate={releaseDate}
+              genderList={genres}
+
+            />
+          </div>
+          <div className="">
+            <SideRight
+              id={id}
+              posterPath={posterPath || '/images/default-poster.jpg'}
+              voteAverage={voteAverage}
+              voteCount={voteCount}
+            />
+          </div>
+        </div>
       </ImageBackground>
     </div>
   )

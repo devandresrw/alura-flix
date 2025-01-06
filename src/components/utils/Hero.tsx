@@ -2,7 +2,6 @@
 import ItemHero from '@/components/utils/ItemHero'
 import { useEffect, useState } from 'react'
 import useHeroStore from '@/stores/useHeroStore'
-import { getFullImagePath } from '@/lib/urlComplete'
 
 export default function Hero() {
 
@@ -38,10 +37,10 @@ export default function Hero() {
               <div key={index} className="w-full flex-shrink-0">
                 <ItemHero
                   title={movie.title}
-                  backdropPath={getFullImagePath(movie.backdropPath)}
-                  posterPath={getFullImagePath(movie.posterPath)}
+                  backdropPath={movie.backdropPath}
+                  posterPath={movie.posterPath}
                   overview={movie.overview}
-                  genres={movie.genres}
+                  genres={movie?.genres}
                   releaseDate={movie.releaseDate}
                   voteAverage={movie.voteAverage}
                   voteCount={movie.voteCount}

@@ -96,7 +96,7 @@ async function main() {
 
   for (const genre of genres) {
     let page = 1;
-    const maxPages = 500;
+    const maxPages = 300;
 
     while (page <= maxPages) {
       const data = await fetchMoviesByGenre(genre.id, page);

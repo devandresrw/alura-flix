@@ -13,8 +13,11 @@ export const ImageBackground = ({ children, src }: ImageBackgroundProps) => {
     height: '100%',
   }
   return (
-    <div style={style}>
-      {children}
+    <div className="relative" style={style}>
+      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div className="w-full h-full z-10 shadow-myshahero"> {/* Contenido por encima del overlay */}
+        {children}
+      </div>
     </div>
   )
 }

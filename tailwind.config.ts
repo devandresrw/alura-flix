@@ -17,8 +17,8 @@ export default {
         "mybgblack": "#3d3c4c"
       },
       boxShadow: {
-        "myshadow": "box-shadow: 0px 10px 7px 0px rgba(61,60,76,1)"
-
+        "myshadow": "box-shadow: 0px 10px 7px 0px rgba(61,60,76,1)",
+        "myshahero": "inset 0px 0px 105px 55px rgba(0,0,0,0.75)"
       }
     },
   },

@@ -215,7 +215,7 @@ function main() {
                     if (!(_i < genres_1.length)) return [3 /*break*/, 13];
                     genre = genres_1[_i];
                     page = 1;
-                    maxPages = 500;
+                    maxPages = 300;
                     _c.label = 4;
                 case 4:
                     if (!(page <= maxPages)) return [3 /*break*/, 12];
