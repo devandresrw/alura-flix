@@ -1,9 +1,18 @@
+'use client'
+import Link from 'next/link'
 
-interface titleProps {
+interface TitleProps {
   title: string
+  id: number
 }
-export const TitleMovie = ({ title }: titleProps) => {
+
+export const TitleMovie = ({ title, id }: TitleProps) => {
+
+
+
   return (
-    <h1>{title}</h1>
+    <Link href={`/movie/${id}`} className='cursor-pointer hover:text-red-500'>
+      {title}
+    </Link>
   )
 }

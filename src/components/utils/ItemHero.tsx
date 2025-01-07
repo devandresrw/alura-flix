@@ -1,5 +1,6 @@
 import { SideLeft, SideRight, ImageBackground } from "@/components"
 import { Movie } from '@/lib/types'
+import Link from "next/link"
 
 /**
 Recibe una imagen de fondo
@@ -38,8 +39,9 @@ export default function ItemHero({
         src={backdropPath}
       >
         <div className="w-full h-full flex items-center">
-          <div className="">
+          <div className="flex flex-col z-10 w-1/2">
             <SideLeft
+              id={id}
               title={originalTitle}
               adult={adult}
               originalLanguage={originalLanguage}
@@ -49,8 +51,9 @@ export default function ItemHero({
               genderList={genres}
 
             />
+
           </div>
-          <div className="">
+          <div className="flex flex-col z-10 w-1/2">
             <SideRight
               id={id}
               posterPath={posterPath || '/images/default-poster.jpg'}

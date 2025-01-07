@@ -1,20 +1,27 @@
-import { prisma } from '@/lib/prisma'
 import { NextResponse } from 'next/server'
+import { prisma } from '@/lib/prisma'
 
 export async function GET(
-  _request: Request,
+  request: Request,
   { params }: { params: { id: string } }
 ) {
   try {
-    const movieId = parseInt(params.id)
+    const { id } = await params
+
+    const movieId = parseInt(id)
+
+
+
+    if (isNaN(movieId)) {
+      return NextResponse.json(
+        { error: 'ID inválido' },
+        { status: 400 }
+      )
+    }
 
     const movie = await prisma.movie.findUnique({
-      where: {
-        id: movieId
-      },
-      include: {
-        genres: true
-      }
+      where: { id: movieId },
+      include: { genres: true }
     })
 
     if (!movie) {
@@ -25,12 +32,13 @@ export async function GET(
     }
 
     return NextResponse.json(movie)
-
   } catch (error) {
     console.error('Error:', error)
     return NextResponse.json(
       { error: 'Error interno del servidor' },
       { status: 500 }
     )
+  } finally {
+    await prisma.$disconnect()
   }
 }

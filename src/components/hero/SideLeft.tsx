@@ -8,8 +8,10 @@ import {
   RealeseMovie,
   GenderMovie
 } from '@/components'
+import Link from 'next/link'
 
 interface SideLeftProps {
+  id: number
   title: string
   adult: boolean
   originalLanguage: string
@@ -22,7 +24,7 @@ interface SideLeftProps {
 export const SideLeft = ({ ...props }: SideLeftProps) => {
   return (
     <div className=''>
-      <TitleMovie title={props.title} />
+      <TitleMovie title={props.title} id={props.id} />
       <PublicMode adult={props.adult} />
       <Languege originalLanguage={props.originalLanguage} />
       <div className=''>
@@ -31,6 +33,9 @@ export const SideLeft = ({ ...props }: SideLeftProps) => {
       <Popularity popularity={props.popularity} />
       <RealeseMovie releaseDate={props.realeseDate} />
       <GenderMovie genderList={props.genderList} />
+      <span onClick={() => console.log('asd')}>
+        <Link href={`/movie/${props.id}`}>asd</Link>
+      </span>
     </div>
   )
 }

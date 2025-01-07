@@ -24,4 +24,3 @@ export const useHeroStore = create<HeroStore>((set) => ({
     }
   },
 }))
-

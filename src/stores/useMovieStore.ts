@@ -15,7 +15,7 @@ export const useMovieStore = create<MovieStore>((set) => ({
   fetchMovie: async (id: number) => {
     try {
       set({ isLoading: true, error: null })
-      const response = await fetch(`/api/findmovie/${id}`)
+      const response = await fetch(`/api/movie/${id}`)
       if (!response.ok) {
         const errorData = await response.json()
         throw new Error(errorData.error || 'Error al cargar la película')
