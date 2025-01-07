@@ -33,9 +33,6 @@ export const SideLeft = ({ ...props }: SideLeftProps) => {
       <Popularity popularity={props.popularity} />
       <RealeseMovie releaseDate={props.realeseDate} />
       <GenderMovie genderList={props.genderList} />
-      <span onClick={() => console.log('asd')}>
-        <Link href={`/movie/${props.id}`}>asd</Link>
-      </span>
     </div>
   )
 }

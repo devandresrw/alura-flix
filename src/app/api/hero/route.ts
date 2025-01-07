@@ -19,15 +19,26 @@ export async function GET() {
       }
     )
 
+    //Constante para almacenar Ids unicos 
     const movieSet = new Set<number>()
+    //Array de peliculas sin repetir
     const uniqueMovies: Movie[] = []
 
+    /*
+      - Itera sobre cada género 
+      - para cada genero itera sus peliculas
+      - verifica ids duplicados
+      - almacena peliculas unicas 
+    */
     genres.forEach(genres => {
+
       genres.movies.forEach(movie => {
+
         if (!movieSet.has(movie.id)) {
           movieSet.add(movie.id)
           uniqueMovies.push(movie)
         }
+
       })
     })
 

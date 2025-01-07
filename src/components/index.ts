@@ -15,6 +15,8 @@ export { RatingMovie } from '@/components/hero/RatingMovie'
 export { VoteCount } from '@/components/hero/VoteCount'
 export { VoteAverague } from '@/components/hero/VoteAverague'
 export { PosterMovie } from '@/components/hero/PosterMovie'
-
+//Categories 
+export { HeroCategorie } from '@/components/categories/hero/HeroCategorie'
+export { Slidercategories } from '@/components/categories/slider/Slidercategories'
 //utils
 export { ImageMovie } from '@/components/utils/ImageMovie'
