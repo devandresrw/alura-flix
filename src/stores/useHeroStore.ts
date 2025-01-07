@@ -8,7 +8,7 @@ interface HeroStore {
   fetchMovies: () => Promise<void>
 }
 
-const useHeroStore = create<HeroStore>((set) => ({
+export const useHeroStore = create<HeroStore>((set) => ({
   movies: [],
   currentMovie: null,
   fetchMovies: async () => {
@@ -25,4 +25,3 @@ const useHeroStore = create<HeroStore>((set) => ({
   },
 }))
 
-export default useHeroStore

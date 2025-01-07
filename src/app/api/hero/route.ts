@@ -1,7 +1,7 @@
-import { PrismaClient, Movie } from "@prisma/client"
+import { prisma } from '@/lib/prisma'
+import { Movie } from "@prisma/client"
 export const dynamic = 'force-static'
 
-const prisma = new PrismaClient()
 
 export async function GET() {
 

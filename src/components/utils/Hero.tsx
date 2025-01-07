@@ -1,7 +1,7 @@
 'use client'
 import ItemHero from '@/components/utils/ItemHero'
 import { useEffect, useState } from 'react'
-import useHeroStore from '@/stores/useHeroStore'
+import { useHeroStore } from '@/stores/useHeroStore'
 
 export default function Hero() {
 
