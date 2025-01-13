@@ -5,10 +5,6 @@ import { useEffect } from "react"
 import { useMovieStore } from "@/stores/useMovieStore"
 import Loading from "@/app/loading"
 
-interface Pops {
-  params: { id: number }
-}
-
 export default function MoviePage() {
   const params = useParams()
   const { movie, isLoading, error, fetchMovie } = useMovieStore()

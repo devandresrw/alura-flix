@@ -14,10 +14,11 @@ datasource db {
 }
 
 model Genre {
-  id     Int     @id @default(autoincrement())
-  tmdbId Int     @unique
-  name   String
-  movies Movie[] @relation("MovieGenres")
+  id          Int     @id @default(autoincrement())
+  tmdbId      Int     @unique
+  name        String
+  description String?
+  movies      Movie[] @relation("MovieGenres")
 }
 
 model Movie {

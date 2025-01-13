@@ -96,7 +96,7 @@ async function main() {
 
   for (const genre of genres) {
     let page = 1;
-    const maxPages = 300;
+    const maxPages = 250;
 
     while (page <= maxPages) {
       const data = await fetchMoviesByGenre(genre.id, page);
@@ -117,7 +117,7 @@ async function main() {
 
           const genreConnections = movie.genre_ids.map((genreId: number) => ({
             where: { tmdbId: genreId },
-            create: { tmdbId: genreId, name: '' },
+            create: { tmdbId: genreId, name: '', description: null },
           }));
 
           const releaseDate = movie.release_date ? new Date(movie.release_date) : new Date('1970-01-01');

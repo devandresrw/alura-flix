@@ -1,3 +1,4 @@
+'use client'
 import { useMoviesByGenreStore } from '@/stores/useTMCStore'
 import { useEffect } from 'react'
 export const Slidercategories = () => {
@@ -11,6 +12,7 @@ export const Slidercategories = () => {
   }, [])
   return (
     <div className="">
+
     </div>
   )
 }

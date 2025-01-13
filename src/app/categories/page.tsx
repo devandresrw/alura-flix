@@ -1,13 +1,12 @@
-import { HeroCategorie, Slidercategories } from "@/components"
+'use client'
+import { useParams } from 'next/navigation'
+import { useEffect } from 'react'
+
+
 export default function CategoriesPage() {
-  return (
-    <div className="">
-      <div className="">
-        <HeroCategorie />
-      </div>
-      <div className="">
-        <Slidercategories />
-      </div>
-    </div>
-  )
+  const categoriesId = useParams()
+
+  useEffect(() => {
+
+  }, [])
 }

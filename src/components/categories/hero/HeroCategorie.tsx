@@ -24,7 +24,7 @@ export const HeroCategorie = () => {
           const { id, posterPath, title, genres } = movie
           return (
             <>
-              <div className='' key={id + index}>
+              <div className='' key={`movie-${index}`}>
                 <ImageMovie
                   src={posterPath ?? '/images/default-poster.jpg'}
                   alt={movie.id.toString()}

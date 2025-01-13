@@ -11,7 +11,10 @@ export const TitleMovie = ({ title, id }: TitleProps) => {
 
 
   return (
-    <Link href={`/movie/${id}`} className='cursor-pointer hover:text-red-500'>
+    <Link href={`/movie/${id}`} className='cursor-pointer
+    font-roboto font-bold text-4xl hover:cursor-pointer
+  hover:text-gray-300 overflow-hidden whitespace-nowrap
+  text-ellipsis'>
       {title}
     </Link>
   )

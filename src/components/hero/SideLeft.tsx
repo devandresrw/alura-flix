@@ -23,10 +23,12 @@ interface SideLeftProps {
 
 export const SideLeft = ({ ...props }: SideLeftProps) => {
   return (
-    <div className=''>
-      <TitleMovie title={props.title} id={props.id} />
-      <PublicMode adult={props.adult} />
-      <Languege originalLanguage={props.originalLanguage} />
+    <div className='pl-10'>
+      <div className='flex items-center justify-start gap-3'>
+        <TitleMovie title={props.title} id={props.id} />
+        <PublicMode adult={props.adult} />
+        <Languege originalLanguage={props.originalLanguage} />
+      </div>
       <div className=''>
         <OverviewMovie overview={props.overview} />
       </div>

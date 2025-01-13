@@ -23,8 +23,9 @@ export const SideRight = ({
         <PosterMovie
           src={posterPath || '/images/default-poster.jpg'}
           alt={`pelicula ${id}`}
-          width={448}
-          height={673}
+          width={248}
+          height={473}
+          styles='rounded-lg'
         />
       </div>
       <div className=''>

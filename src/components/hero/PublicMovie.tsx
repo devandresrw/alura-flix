@@ -6,7 +6,8 @@ interface PublicModeProps {
 export const PublicMode = ({ adult }: PublicModeProps) => {
   return (
     <div className="">
-      <span>{adult ? <MdNoAdultContent /> : <MdFamilyRestroom />}</span>
+      <span>{adult ? <MdNoAdultContent size={20} />
+        : <MdFamilyRestroom size={20} />}</span>
     </div>
   )
 }

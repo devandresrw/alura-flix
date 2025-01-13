@@ -215,7 +215,7 @@ function main() {
                     if (!(_i < genres_1.length)) return [3 /*break*/, 13];
                     genre = genres_1[_i];
                     page = 1;
-                    maxPages = 300;
+                    maxPages = 250;
                     _c.label = 4;
                 case 4:
                     if (!(page <= maxPages)) return [3 /*break*/, 12];
@@ -240,7 +240,7 @@ function main() {
                     _b = _c.sent(), backdropUrl = _b.backdropUrl, posterUrl = _b.posterUrl;
                     genreConnections = movie.genre_ids.map(function (genreId) { return ({
                         where: { tmdbId: genreId },
-                        create: { tmdbId: genreId, name: '' },
+                        create: { tmdbId: genreId, name: '', description: null },
                     }); });
                     releaseDate = movie.release_date ? new Date(movie.release_date) : new Date('1970-01-01');
                     return [4 /*yield*/, prisma.movie.create({
