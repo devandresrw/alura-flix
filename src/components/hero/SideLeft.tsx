@@ -23,7 +23,7 @@ interface SideLeftProps {
 
 export const SideLeft = ({ ...props }: SideLeftProps) => {
   return (
-    <div className='pl-10'>
+    <div className='pl-14 flex flex-col justify-center gap-3'>
       <div className='flex items-center justify-start gap-3'>
         <TitleMovie title={props.title} id={props.id} />
         <PublicMode adult={props.adult} />
@@ -32,8 +32,11 @@ export const SideLeft = ({ ...props }: SideLeftProps) => {
       <div className=''>
         <OverviewMovie overview={props.overview} />
       </div>
-      <Popularity popularity={props.popularity} />
-      <RealeseMovie releaseDate={props.realeseDate} />
+      <div className='flex justify-start items-center gap-3'>
+        <Popularity popularity={props.popularity} />
+        <RealeseMovie releaseDate={props.realeseDate} />
+      </div>
+
       <GenderMovie genderList={props.genderList} />
     </div>
   )
