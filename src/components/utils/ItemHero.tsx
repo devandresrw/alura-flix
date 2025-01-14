@@ -1,5 +1,5 @@
 import { SideLeft, SideRight, ImageBackground } from "@/components"
-import { Movie } from '@/lib/types'
+import { Movie, Genre } from '@/lib/types'
 
 /**
 Recibe una imagen de fondo
@@ -28,7 +28,8 @@ export default function ItemHero({
   posterPath,
   id,
 
-}: Movie) {
+
+}: Movie & { genres: Genre[] }) {
 
   return (
     <div className="w-full h-[90vh]">
@@ -46,6 +47,7 @@ export default function ItemHero({
               popularity={popularity}
               realeseDate={releaseDate}
               genderList={genres}
+
 
             />
           </div>

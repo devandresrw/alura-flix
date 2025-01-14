@@ -7,7 +7,10 @@ import Loading from "@/app/loading"
 
 export default function MoviePage() {
   const params = useParams()
-  const { movie, isLoading, error, fetchMovie } = useMovieStore()
+  const movie = useMovieStore(state => state.movie)
+  const isLoading = useMovieStore(state => state.isLoading)
+  const error = useMovieStore(state => state.error)
+  const fetchMovie = useMovieStore(state => state.fetchMovie)
 
   useEffect(() => {
     const movieId = Number(params.id)

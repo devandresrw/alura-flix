@@ -51,6 +51,7 @@ export default function Hero() {
                   video={movie.video}
                   id={movie.id}
                   tmdbId={movie.tmdbId}
+                  genreIds={movie.genreIds}
                 />
               </div>
             ))}

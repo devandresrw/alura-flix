@@ -1,6 +1,5 @@
-import { NextResponse } from 'next/server'
+import { NextResponse } from "next/server";
 import { prisma } from '@/lib/prisma'
-
 export async function GET(
   request: Request,
   { params }: { params: { id: string } }
@@ -16,21 +15,8 @@ export async function GET(
       )
     }
 
-    const movie = await prisma.movie.findUnique({
-      where: { id: movieId },
-      include: { genres: true }
-    })
 
-    if (!movie) {
-      return NextResponse.json(
-        { error: 'Película no encontrada' },
-        { status: 404 }
-      )
-    }
-
-    return NextResponse.json(movie)
   } catch (error) {
-    console.error('Error:', error)
     return NextResponse.json(
       { error: 'Error interno del servidor' },
       { status: 500 }
@@ -38,4 +24,5 @@ export async function GET(
   } finally {
     await prisma.$disconnect()
   }
+
 }

@@ -16,6 +16,7 @@ export interface Movie {
   popularity: number
   posterPath?: string
   releaseDate: string
+  genreIds: number[];
   title: string
   video: boolean
   voteAverage: number
