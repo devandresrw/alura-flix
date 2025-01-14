@@ -1,8 +1,14 @@
+'use client'
 import { useParams } from 'next/navigation'
-import { HeroCategorie, Slidercategories } from "@/components"
+import { useMoviesByCategory } from '@/stores/'
 
 export default function CategoriesIdPage() {
-  return (
+
+const params = useParams()
+
+
+	
+return (
     <div className="">
 
     </div>
