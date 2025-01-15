@@ -4,9 +4,10 @@ import Link from 'next/link'
 interface TitleProps {
   title: string
   id: number
+  styles?: string
 }
 
-export const TitleMovie = ({ title, id }: TitleProps) => {
+export const TitleMovie = ({ title, id, styles }: TitleProps) => {
 
   const truncateTitle = (title: string, maxLength: number) => {
     if (title.length > maxLength) {
@@ -16,12 +17,12 @@ export const TitleMovie = ({ title, id }: TitleProps) => {
     }
   }
 
-
   return (
-    <Link href={`/movie/${id}`} className='cursor-pointer
-    font-roboto font-medium text-4xl hover:cursor-pointer
-  hover:text-gray-300'>
+    <div className=''>
+      <Link href={`/movie/${id}`} className={styles}>
       {truncateTitle(title, 30)}
     </Link>
+    </div>
+    
   )
 }

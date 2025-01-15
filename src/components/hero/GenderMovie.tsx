@@ -3,12 +3,13 @@ import { Genre } from "@/lib/types"
 
 interface GenderMovieProps {
   genderList: Genre[]
+  style?: string
 }
-export const GenderMovie = ({ genderList }: GenderMovieProps) => {
+export const GenderMovie = ({ genderList, style }: GenderMovieProps) => {
 
 
   return (
-    <div className="flex gap-2">
+    <div className={style}>
       {genderList.map((genre) => (
         <Link key={genre.id} href={`/categories/${genre.id}`}>
           <span

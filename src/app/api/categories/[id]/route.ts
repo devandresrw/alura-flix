@@ -25,7 +25,7 @@ export async function GET(
           }
         }
       },
-      take: 10,
+      take: 30,
       orderBy: {
         popularity: 'desc'
       },

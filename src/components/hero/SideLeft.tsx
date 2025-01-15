@@ -25,7 +25,10 @@ export const SideLeft = ({ ...props }: SideLeftProps) => {
   return (
     <div className='pl-14 flex flex-col justify-center gap-3'>
       <div className='flex items-center justify-start gap-3'>
-        <TitleMovie title={props.title} id={props.id} />
+        <TitleMovie title={props.title} id={props.id}
+        styles='cursor-pointer
+    font-roboto font-medium text-4xl hover:cursor-pointer
+  hover:text-gray-300' />
         <PublicMode adult={props.adult} />
         <Languege originalLanguage={props.originalLanguage} />
       </div>
@@ -37,7 +40,7 @@ export const SideLeft = ({ ...props }: SideLeftProps) => {
         <RealeseMovie releaseDate={props.realeseDate} />
       </div>
 
-      <GenderMovie genderList={props.genderList} />
+      <GenderMovie genderList={props.genderList} style={`flex gap-2 text-center flex-wrap justify-start`} />
     </div>
   )
 }
