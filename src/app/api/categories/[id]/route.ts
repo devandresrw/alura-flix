@@ -1,47 +1,40 @@
-import { NextResponse } from "next/server";
+// route.ts (en /api/categories/[id]/route.ts)
 import { prisma } from '@/lib/prisma'
+import { NextResponse } from 'next/server'
+
 export async function GET(
   request: Request,
   { params }: { params: { id: string } }
 ) {
   try {
-    const { id } = await params
-    const genderId = parseInt(id)
-    const { searchParams } = new URL(request.url)
-    const take = 10
-    const skip = (page - 1) * take
-vi
-    if (isNaN(movieId)) {
+    const { id } = params
+    const categoryId = parseInt(id)
+
+    if (isNaN(categoryId)) {
       return NextResponse.json(
-        { error: 'ID inválido' },
+        { error: 'ID de categoría inválido' },
         { status: 400 }
       )
-    } 
+    }
 
     const movies = await prisma.movie.findMany({
-      where:{
-        genres:{
-          some:{
-            id: genderId
+      where: {
+        genres: {
+          some: {
+            id: categoryId
           }
         }
       },
-      include:{
-        genres:true
+      take: 10,
+      orderBy: {
+        popularity: 'desc'
       },
-      take,
-      skip,
-      orderBy:{
-        popularity:'desc'
+      include: {
+        genres: true
       }
     })
 
-    return NextResponse.json({
-      movies,
-      page,
-      totalMovies: movies.length
-    })
-
+    return NextResponse.json(movies)
   } catch (error) {
     return NextResponse.json(
       { error: 'Error interno del servidor' },
@@ -50,5 +43,4 @@ vi
   } finally {
     await prisma.$disconnect()
   }
-
 }

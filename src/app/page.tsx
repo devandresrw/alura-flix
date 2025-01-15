@@ -1,7 +1,6 @@
 
 import dynamic from "next/dynamic";
 
-
 const Hero = dynamic(() => import("@/components/utils/Hero")
   .then((mod) => mod.default),
   { ssr: true, });
